@@ -26,6 +26,16 @@ public class PlayerAttackState : PlayerState
             controller.SpriteRenderer.flipX = true;
         }
 
+        // Moves the attack point to match the direction the player is facing
+        if(controller.SpriteRenderer.flipX)
+        {
+            controller.attackPoint.localPosition = Vector2.right * -0.5f;
+        }
+        else
+        {
+            controller.attackPoint.localPosition = Vector2.right * 0.5f;
+        }
+
         // Stop the player
         controller.PlayerPhysics.move.x = 0;
         
